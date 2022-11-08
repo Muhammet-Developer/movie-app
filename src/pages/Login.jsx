@@ -8,7 +8,7 @@ import {Link } from 'react-router-dom';
 const Login = () => {
   const {loginEmail,
     setUser,
-    setLoginEmail,loginPasswpord,setLoginPassword,
+    setLoginEmail,loginPassword,setLoginPassword,
     signInWithEmailAndPassword,} = useAuthContext();
 
     onAuthStateChanged(auth,(currentUser)=>{
@@ -22,8 +22,8 @@ const Login = () => {
   const login = async ()=>{
     try{
       const user = await signInWithEmailAndPassword(
-        auth,loginEmail,loginPasswpord);
-      console.log(user);
+        auth,loginEmail,loginPassword);
+
     }catch(error){
       console.log(error.message)
     }
@@ -42,7 +42,6 @@ const Login = () => {
       <input type="text" className="form-control" id="exampleInputEmail1" 
       aria-describedby="emailHelp"
       name="email"
-      // value={user?.email || ""}
       onChange={(e) => setLoginEmail( e.target.value )}
       />
     </div>
@@ -51,7 +50,6 @@ const Login = () => {
       <input type="password" className="form-control"
        id="exampleInputPassword1"
        name="password"
-      // value={user?.password || ""}
       onChange={(e) => setLoginPassword( e.target.value )}
       />
     </div>
@@ -61,8 +59,7 @@ const Login = () => {
   <button type="submit" className="btn btn-outline-secondary" onClick={signInWithGoogle}><GoogleIcon color="primary"/>  Google <small>ile kaydol</small></button>
     </div>
     
-  {/* <h4>{user?.email}</hs4> */}
-  {/* <h1>{localStorage.getItem("name")}</h1> */}
+
   </form>
       </div>
       

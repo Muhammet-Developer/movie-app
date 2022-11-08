@@ -3,9 +3,8 @@ import { useAuthContext } from '../context/AuthContext';
 import styles from"./Register.Style.module.css"
 import {Link } from 'react-router-dom';
 import GoogleIcon from '@mui/icons-material/Google';
-
-// import {createUserWithEmailAndPassword} from "firebase/auth"
 import {auth, signInWithGoogle} from "../auth/firebase";
+
 const Register = () => {
   const {registerEmail,setRegisterEmail,setUser,registerPassword,setRegisterPassword
     ,createUserWithEmailAndPassword,onAuthStateChanged} = useAuthContext();
@@ -55,8 +54,8 @@ const Register = () => {
        </div>
        {registerEmail ?<button onClick={register} type="submit" className="btn btn-primary">Register</button> :
         <button type="button" className="btn btn-lg btn-primary" disabled>Register</button> }
-         <button type="submit" className="btn btn-lg btn-primary" onClick={signInWithGoogle}><GoogleIcon color="primary"/>  Google <small>ile kaydol</small></button>
      </form>
+         <button type="submit" className="btn btn-lg btn-primary " style={{marginLeft:"10rem"}} onClick={signInWithGoogle}><GoogleIcon color="primary"/>  Google <small>ile kaydol</small></button>
      </div>
           </>
   )

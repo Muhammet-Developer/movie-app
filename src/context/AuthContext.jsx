@@ -11,14 +11,14 @@ export const UserProvider = ({children})=>{
     const [registerEmail,setRegisterEmail]=useState("");
     const [registerPassword,setRegisterPassword]=useState("");
     const [loginEmail,setLoginEmail]=useState("");
-    const [loginPasswpord,setLoginPassword]=useState("");
+    const [loginPassword,setLoginPassword]=useState("");
     const [search,setSearch]=useState("");
     const [data,setData]=useState([]);
 
 return(
   <AuthContext.Provider value={{user1,setUser1,registerEmail,setRegisterEmail,registerPassword,setRegisterPassword
   ,loginEmail,setLoginEmail,
-  loginPasswpord,
+  loginPassword,
   signInWithEmailAndPassword,
   setLoginPassword,user,setUser,
   createUserWithEmailAndPassword,onAuthStateChanged,
