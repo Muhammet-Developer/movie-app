@@ -1,0 +1,45 @@
+
+.container{
+    background-image: url(../assets/SignBackground.png) ;
+    background-repeat: no-repeat ;
+    background-size:cover ;
+    width: 100%;
+    height: 94vh;
+    display: flex;
+    justify-content: flex-end;
+    /* align-items: center; */
+    
+}
+
+.container form{
+    margin-top: 45px;
+    width: 80vh;
+    height: 61vh;
+    align-content: center;
+    margin-right: 6rem;
+}
+h2{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@media (max-width:425px){
+    .container{
+        background-image: none;
+        background-color: #E5E5E5 ;
+        color: black;
+        
+    }
+    .form1{
+        display: flex;
+        /* justify-content: center; */
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        margin-left: 65px;
+    }
+    form{
+        justify-content: center;
+        align-items: center;
+        margin-left: 55px;
+    }
+}

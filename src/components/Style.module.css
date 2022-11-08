@@ -1,0 +1,28 @@
+@media (max-width:425px){
+    .grdi{
+        margin-left: 2rem;
+    }
+}
+.card:hover{
+    /* background-color: red; */
+    opacity: 0.5;
+}
+.tag {
+    border-radius: 5px;
+    padding: 0.7rem;
+    font-weight: bold;
+    width: 3rem;
+    text-align: center;
+  }
+  
+  .tag.green {
+    background-color: #1b5e20;
+  }
+  
+  .tag.orange {
+    background-color: #f57f17;
+  }
+  
+  .tag.red {
+    background-color: #7f0000;
+  }
