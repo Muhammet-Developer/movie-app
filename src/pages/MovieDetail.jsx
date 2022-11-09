@@ -1,21 +1,28 @@
 import {useParams, useNavigate } from "react-router-dom"
 import axios from "axios"
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import "./Movie.css"
 import { useEffect, useState } from "react";
 import defaultİmg from "../assets/movie.png"
+import { useAuthContext } from "../context/AuthContext";
+import VideoSection from "../components/VideoSection";
 const MovieDetail = () => {
   const navigate=useNavigate()
  
   const {id} = useParams()
   const [data2,setData2]=useState("");
+  const{videoKey,setVideoKey}=useAuthContext()
+
   const APP_KEY = process.env.REACT_APP_APP_KEY;                          
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${APP_KEY}`;
-  
+  const videoUrl = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${APP_KEY}`;
   
   useEffect(()=>{
-    axios.get(url).then(res => setData2(res.data))
-  })
+    axios.get(url).then(res => setData2(res.data));
+    axios
+    .get(videoUrl)
+    .then((res) => setVideoKey(res.data.results[0].key))
+    .catch((err) => console.log(err));
+  },[data2])
   
   const {title,overview,poster_path,vote_average,popularity,original_language,release_date} =data2;
   const imgUrl = `https://image.tmdb.org/t/p/w1280${poster_path}`;
@@ -47,13 +54,12 @@ const MovieDetail = () => {
                     <li>Language: <span id="movie_runtime" />{original_language}</li>
                   </ul>
                 </div>
-                  <button className="btn" target="_blank" ><PlayArrowIcon className="icon"/> Watch Movie</button>
-                  <button className="btn" onClick={()=> navigate(-1) }>Go Back</button>
+                {videoKey && <VideoSection videoKey={videoKey} />}
+                  <button className="btn btnBack" onClick={()=> navigate(-1) }>Go Back</button>
               </div>
             </article>
             <div className="episodes_list">
-              <h3 className="episodes_title" > </h3>
-              <ol className="episodes" id="episodes" />
+            {/* {videoKey && <VideoSection videoKey={videoKey} />} */}
             </div>
           </section>
         </main>

@@ -68,18 +68,7 @@ html {
     }
   }
   
-  input[type="search"] {
-    -webkit-appearance: textfield;
-    -webkit-box-sizing: content-box;
-    font-family: inherit;
-    font-size: 100%;
-    outline: 0px;
-    border: 0px;
-  }
-  input::-webkit-search-decoration,
-  input::-webkit-search-cancel-button {
-    display: none;
-  }
+  
   
   .header_form-icon {
     display: flex;
@@ -199,6 +188,14 @@ html {
   .btn svg {
     margin-right: 4px;
   }
+  .btnBack{
+    margin-top:-35px ;
+  }
+  @media (max-width:425px){
+    .btnBack{
+      margin-left: 9rem;
+    }
+  }
   
   .episodes {
     display: grid;
@@ -222,9 +219,9 @@ html {
     }
   }
   
-  .episodes_list h3 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
+  .episodes_list  {
+    width: 100px;
+    height: 100px;
   }
   
   .footer {

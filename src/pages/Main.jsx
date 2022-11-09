@@ -9,7 +9,6 @@ import CircularProgress from '@mui/material/CircularProgress';
 
 import { useEffect } from "react";
 import { useState } from "react";
-
 const Main = () => {
   // const navigate = useNavigate();
   const {search,setSearch,setData,user}=useAuthContext();
@@ -74,6 +73,8 @@ const Main = () => {
         </Box>
       </Container>
     </form>
+   
+    
     {loading ? <CircularProgress/>: <MovieCard/>}
    
         </>

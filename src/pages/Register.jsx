@@ -55,7 +55,7 @@ const Register = () => {
        {registerEmail ?<button onClick={register} type="submit" className="btn btn-primary">Register</button> :
         <button type="button" className="btn btn-lg btn-primary" disabled>Register</button> }
      </form>
-         <button type="submit" className="btn btn-lg btn-primary " style={{marginLeft:"10rem"}} onClick={signInWithGoogle}><GoogleIcon color="primary"/>  Google <small>ile kaydol</small></button>
+         <button type="submit" className="btn btn-lg btn-primary " style={{marginLeft:"5.5rem"}} onClick={signInWithGoogle}><GoogleIcon color="primary"/>  Google <small>ile kaydol</small></button>
      </div>
           </>
   )

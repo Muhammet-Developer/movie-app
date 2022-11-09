@@ -7,6 +7,8 @@ import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid } from '@mui/material';
 import Styles from "./Style.module.css"
 import img from "../assets/movie.png";
+import THMDB from "../assets/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg"
+
 import "./movieCard.css"
 const MovieCard = () => {
     const navigate = useNavigate();
@@ -52,6 +54,9 @@ const MovieCard = () => {
         );
         })}
         </Grid>
+        <div className={Styles.thmdb2}>
+          <a href="https://www.themoviedb.org/documentation/api" target="blank"><img src={THMDB} className={Styles.thmdb} alt="themeMovie" /></a>
+          </div>
     </div>
   )
 }

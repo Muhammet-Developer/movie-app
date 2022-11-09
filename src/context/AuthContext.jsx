@@ -14,12 +14,13 @@ export const UserProvider = ({children})=>{
     const [loginPassword,setLoginPassword]=useState("");
     const [search,setSearch]=useState("");
     const [data,setData]=useState([]);
-
+    const [videoKey, setVideoKey] = useState();
 return(
   <AuthContext.Provider value={{user1,setUser1,registerEmail,setRegisterEmail,registerPassword,setRegisterPassword
   ,loginEmail,setLoginEmail,
   loginPassword,
   signInWithEmailAndPassword,
+  videoKey, setVideoKey,
   setLoginPassword,user,setUser,
   createUserWithEmailAndPassword,onAuthStateChanged,
   signOut,search,setSearch,data,setData}}>
