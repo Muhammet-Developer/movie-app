@@ -31,9 +31,8 @@ const MovieCard = () => {
         const{id,original_title,poster_path,vote_average}=person;
         const imgUrl = `https://image.tmdb.org/t/p/w1280${poster_path}`;
         return (
-          <Grid item xs={12} sm={6} md={4} key={index}    >
-            <Card sx={{ maxWidth: 345, }} className={Styles.card} onClick={()=> navigate(`${id}` ,{ state: person })}>
-           
+          <Grid item xs={12} sm={6} md={3} key={index}    >
+            <Card sx={{ maxWidth: 340, }} className={Styles.card} onClick={()=> navigate(`${id}` ,{ state: person })}>
             <CardActionArea >
               <CardMedia
                 component="img"
